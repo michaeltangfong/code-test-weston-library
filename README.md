@@ -2,7 +2,7 @@
 
 This  code example shows:
 * How to install and include utility library in your project.
-* How to write Node.js code to manipulate MIRN class and get useful data.
+* How to write Node.js code to manipulate MIRN class and retrieve useful data.
 * How to update MIRN business logic.
 
 ## Prerequisite ##
@@ -34,10 +34,6 @@ to obtain checksum, simply access checksum class property
 ```javascrip
 mirn.checksum
 ```
-result:
-```
-4
-```
 ### other properties ###
 ```javascript
 mirn.market
@@ -45,14 +41,6 @@ mirn.jurisdiction
 mirn.distributor
 mirn.physical
 mirn.logical
-```
-result:
-```
-Retail Gas Market
-Victoria
-AEMO
-true
-false
 ```
 
 ### Class properties summary ###
@@ -75,28 +63,41 @@ mirn.display(welib.DISPLAY.STANDARD);
 mirn.display(welib.DISPLAY.SHORT);
 mirn.display(welib.DISPLAY.PRETTY);
 ```
-result:
-```
-53000014P04
-53000014P0
-53000014P0/4
-```
 
 ### Reset class properties
 MIRN class can be reset by invoking reset function, it will then reprocess all properties.
 
 ```javascript
-mirn.reset(welib.DISPLAY.STANDARD);
-mirn.display(welib.DISPLAY.SHORT);
-mirn.display(welib.DISPLAY.PRETTY);
+mirn.reset('5248000467');
+```
+
+### Sample code ###
+```javascript
+const welib = require('welib');
+let mirn = new welib.mirn('53000014P0');
+
+console.log(`Checksum : ${mirn.checksum}`);
+console.log(`Market : ${mirn.market}`);
+console.log(`Jurisdiction : ${mirn.jurisdiction}`);
+console.log(`Distributor : ${mirn.distributor}`);
+console.log(`Standard MIRN : ${mirn.display(welib.DISPLAY.STANDARD)}`);
+console.log(`Short MIRN : ${mirn.display(welib.DISPLAY.SHORT)}`);
+console.log(`Pretty MIRN : ${mirn.display(welib.DISPLAY.PRETTY)}`);
+console.log(`Physical : ${mirn.physical}`);
+console.log(`Logical : ${mirn.logical}`);
 ```
 result:
 ```
-53000014P04
-53000014P0
-53000014P0/4
+Checksum : 4
+Market : Retail Gas Market
+Jurisdiction : Victoria
+Distributor : AEMO
+Standard MIRN : 53000014P04
+Short MIRN : 53000014P0
+Pretty MIRN : 53000014P0/4
+Physical : true
+Logical : false
 ```
-
 ## Change of business logic ##
 All data including markets, jurisdictions, distributors and MIRN ranges are stored in data folder in json format, data can be modified in files in case of business logic change.
 
