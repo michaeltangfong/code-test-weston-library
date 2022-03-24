@@ -1,2 +1,2 @@
 export { mirn } from './lib/mirn';
-export { DISPLAY } from './lib/types';
+export { DISPLAY, ERRORS } from './lib/types';

@@ -1,4 +1,4 @@
-import {DISPLAY} from './types';
+import {DISPLAY, ERRORS} from './types';
 
 const markets = require('./../data/markets.json');
 const jurisdictions = require('./../data/jurisdictions.json');
@@ -55,16 +55,16 @@ export class mirn {
      */
     protected validateMirn(mirn: string): void {
         // check MIRN length and
-        if (!new RegExp(/^[0-9]{8}[0-9PpLl]{1}[0-9Cc]{1}[0-9]{0,1}$/g).test(mirn)) throw new Error('invalid MIRN, accept ^[0-9]{8}[0-9PpLl]{1}[0-9Cc]{1}[0-9]{0,1}$');
+        if (!new RegExp(/^[0-9]{8}[0-9PpLl]{1}[0-9Cc]{1}[0-9]{0,1}$/g).test(mirn)) throw new Error(ERRORS.INVALID_MIRN);
 
         // check for market existence
-        if (!markets[mirn[0]]) throw new Error()
+        if (!markets[mirn[0]]) throw new Error(ERRORS.MARKET_NOT_EXIST);
 
         // check for jurisdiction existence
-        if (!jurisdictions[mirn[1]]) throw new Error(`invalid MIRN, jurisdiction code ${mirn[1]} (in pos 2) not exist`)
+        if (!jurisdictions[mirn[1]]) throw new Error(ERRORS.JURISDICTION_NOT_EXIST);
 
         // check for distributor existence
-        if (!jurisdictions[mirn[1]].distributors[mirn[2]]) throw new Error(`invalid MIRN, distributor code ${mirn[2]} (in pos 3) not exist in ${jurisdictions[mirn[1]].name}`)
+        if (!jurisdictions[mirn[1]].distributors[mirn[2]]) throw new Error(ERRORS.DISTRIBUTOR_NOT_EXIST);
 
         // check if MIRN within range
         let numeridMirn = parseInt(mirn.substring(0,8));
@@ -73,7 +73,7 @@ export class mirn {
             if (numeridMirn >= range.from && numeridMirn <= range.to)
                 passRange = true;
         });
-        if (!passRange) throw new Error(`invalid MIRN not within range`);
+        if (!passRange) throw new Error(ERRORS.MIRN_NOT_IN_RANGE);
     }
 
     /**
