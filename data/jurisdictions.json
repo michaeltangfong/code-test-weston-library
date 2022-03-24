@@ -1,0 +1,39 @@
+{
+  "2": {
+    "name": "NSW/ACT",
+    "distributors": {
+      "0": { "name" : "AEMO" },
+      "1": { "name" : "Allgas Energy – NSW (Tweed Heads), supplied from QLD and operated as part of QLD Retail Gas Market" },
+      "2": { "name" : "Australian Gas Networks (NSW) – Albury & Murray Valley, supplied from VIC and operated as part of VIC Retail Gas Market" },
+      "4": { "name" : "Jemena in NSW (supplied from NSW)" },
+      "5": { "name" : "Australian Gas Networks - (Wagga Wagga NSW) (supplied from NSW)" },
+      "6": { "name" : "ActewAGL in ACT (supplied from NSW)" },
+      "7": { "name" : "Central Ranges Pipeline - (Tamworth NSW) (supplied from NSW)" }
+    }
+  },
+  "3": {
+    "name": "Victoria",
+    "distributors": {
+      "0": { "name" : "AEMO" },
+      "1": { "name" : "Multinet Gas" },
+      "2": { "name" : "Australian Gas Networks (VIC)" },
+      "3": { "name" : "Ausnet Services" },
+      "4": { "name" : "Australian Gas Networks SA (Mildura) supplied from SA and operated as part of SA Retail Gas Market" }
+    }
+  },
+  "4": {
+    "name": "Queensland",
+    "distributors": {
+      "0": { "name" : "AEMO - QLD" },
+      "1": { "name" : "Allgas Energy - QLD" },
+      "2": { "name" : "Australian Gas Networks - QLD" }
+    }
+  },
+  "5": {
+    "name": "South Australia",
+    "distributors": {
+      "1": { "name" : "Australian Gas Networks SA" },
+      "4": { "name" : "Australian Gas Networks (Mildura)" }
+    }
+  }
+}
