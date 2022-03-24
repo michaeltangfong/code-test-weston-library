@@ -56,7 +56,7 @@ mirn.logical
 
 
 ### Displaying MIRN 
-MIRN class also provide a method to display three form: standard, short and pretty, types are provided by welib library.  
+MIRN class also provide a method to display MIRN in three forms: standard, short and pretty.  The argument type is provided by welib library.  
 
 ```javascript
 mirn.display(welib.DISPLAY.STANDARD);
@@ -65,7 +65,7 @@ mirn.display(welib.DISPLAY.PRETTY);
 ```
 
 ### Reset class properties
-MIRN class can be reset by invoking reset function, it will then reprocess all properties.
+MIRN class can be reset by invoking reset function, it will then reprocess all property values.
 
 ```javascript
 mirn.reset('5248000467');
@@ -99,7 +99,7 @@ Physical : true
 Logical : false
 ```
 ## Change of business logic ##
-All data including markets, jurisdictions, distributors and MIRN ranges are stored in data folder in json format, data can be modified in files in case of business logic change.
+All data including markets, jurisdictions, distributors and MIRN ranges are stored in data folder, modify data respectively in case of business logic change.
 
 #### Library folder structure ####
 ```bash
