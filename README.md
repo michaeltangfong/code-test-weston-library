@@ -105,7 +105,10 @@ All data including markets, jurisdictions, distributors and MIRN ranges are stor
 #### Library folder structure ####
 ```bash
 .
-├── data                          # business logic data 
+├── data                          # business logic data folder
+    ├── jurisdictions.json        # Jurisdiction data
+    ├── markets.json              # Market data
+    ├── ranges.json               # MIRN ranges data 
 ├── lib                           # library modules
 ├── test                          # test scripts
 ├── index.ts                      # index file
