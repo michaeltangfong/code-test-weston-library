@@ -4,6 +4,7 @@ This  code example shows:
 * How to install and include utility library in your project.
 * How to write Node.js code to manipulate MIRN class and retrieve useful data.
 * How to update MIRN business logic.
+* How to run test.
 
 ## Prerequisite ##
 ***
@@ -110,3 +111,27 @@ All data including markets, jurisdictions, distributors and MIRN ranges are stor
 ├── index.ts                      # index file
 ```
 
+## Run Test ##
+execute the following command to start testing
+```shell
+jest
+```
+result:
+```shell
+ PASS  test/index.test.js
+  weblib library
+    mira class with MIRA 53000014P0 success cases
+      ✓ checksum must be 4 (2 ms)
+      ✓ market must be Retail Gas Market (1 ms)
+      ✓ Jurisdiction must be Victoria (1 ms)
+      ✓ Distributor must be AEMO
+      ✓ MIRA standard display format must 53000014P04 
+    mira class fail cases
+      ✓ should throw market not exist error when pos 1 is 0 (10 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.421 s, estimated 1 s
+Ran all test suites.
+```
